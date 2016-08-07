@@ -1,9 +1,9 @@
 import { Component} from 'angular2/core'
-
+declare var __moduleName: string;
 @Component({
     selector: 'pm-products',
-    templateUrl: 'app/products/product-list.component.html',
- 
+    templateUrl: 'product-list.component.html',
+    moduleId: __moduleName 
 
 })
 export class ProductListComponent {

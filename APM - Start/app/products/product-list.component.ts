@@ -1,4 +1,5 @@
 import { Component} from 'angular2/core'
+import  { IProduct} from './product'
 declare var __moduleName: string;
 @Component({
     selector: 'pm-products',
@@ -8,7 +9,11 @@ declare var __moduleName: string;
 })
 export class ProductListComponent {
 pageTitle:string="Product List";
-products:any[]=[
+imageWidth:number=50;
+imageMargin:number=2;
+showImage:boolean=false;
+listFilter:string='cart';
+products:IProduct[]=[
     {
         "productId": 1,
         "productName": "Leaf Rake",
@@ -60,4 +65,7 @@ products:any[]=[
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
 ];
+tooggleImage():void{
+    this.showImage=!this.showImage;
+}
 }

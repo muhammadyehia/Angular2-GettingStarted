@@ -1,5 +1,8 @@
 import { Component } from 'angular2/core'
+import { HTTP_PROVIDERS } from 'angular2/http'
+import 'rxjs/Rx' // load all feachers
 import  {ProductListComponent } from './products/product-list.component'
+import  {ProductService } from './products/product.service'
 @Component({
     selector:'pm-app',
      template:`
@@ -8,7 +11,8 @@ import  {ProductListComponent } from './products/product-list.component'
      <pm-products> My First Component </pm-products>
      </div>
      `,
-     directives:[ProductListComponent]
+     directives:[ProductListComponent],
+     providers:[ProductService,HTTP_PROVIDERS]
 })
 export class AppComponent{
     PageTitle:string="Product Managment";
